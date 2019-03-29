@@ -1,4 +1,5 @@
 import * as monaco from 'monaco-editor';
+import { getSampleCucumberSentences } from './cucumber-sentences';
 
 export const cucumberLanguageId = 'cucumber';
 export const cucumberThemeId = 'cucumber-theme';
@@ -70,8 +71,13 @@ export const registerCucumberLanguage = () => {
                     label: 'Then',
                     kind: monaco.languages.CompletionItemKind.Text,
                     insertText: 'Then'
-                }
-                // TODO Import sentences from cucumber step files
+                },
+                ...getSampleCucumberSentences().map(sentence => ({
+                    // TODO Make available ONLY after Given/When/Then
+                    label: sentence,
+                    kind: monaco.languages.CompletionItemKind.Text,
+                    insertText: sentence
+                }))
             ];
             return { suggestions };
         }
