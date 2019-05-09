@@ -50,12 +50,12 @@ export const registerCucumberLanguage = () => {
                 {
                     label: 'Scenario Outline',
                     kind: monaco.languages.CompletionItemKind.Keyword,
-                    insertText:
-    `    Scenario Outline: <Scenario description>
+                    insertText: `
+    Scenario Outline: <Scenario description>
 
-        Examples:
-            | <variable1> | <variable2> |
-            | <value1> | <value2> |`,
+    Examples:
+        | <variable1> | <variable2> |
+        | <value1> | <value2> |`,
                 },
                 {
                     label: 'Given',
